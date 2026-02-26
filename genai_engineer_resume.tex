@@ -1,0 +1,230 @@
+%========================================================================================
+% GenAI Engineer Resume Template
+% Clean, ATS-Friendly LaTeX CV
+%========================================================================================
+
+\documentclass[11pt, a4paper]{article}
+
+% --- Packages ---
+\usepackage[margin=0.75in, top=0.6in, bottom=0.6in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fontawesome5}
+\usepackage{parskip}
+
+% --- Color Palette ---
+\definecolor{accentblue}{HTML}{1A73E8}
+\definecolor{darkgray}{HTML}{2D2D2D}
+\definecolor{midgray}{HTML}{555555}
+\definecolor{rulegray}{HTML}{CCCCCC}
+
+% --- Hyperlink Styling ---
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accentblue,
+    linkcolor=accentblue,
+}
+
+% --- Section Title Formatting ---
+\titleformat{\section}{
+    \vspace{-4pt}\color{accentblue}\large\bfseries\uppercase
+}{}{0em}{}[\color{rulegray}\titlerule\vspace{-2pt}]
+
+\titlespacing*{\section}{0pt}{10pt}{6pt}
+
+% --- Custom Commands ---
+\newcommand{\resumename}[1]{%
+    {\Huge\bfseries\color{darkgray} #1}\par
+}
+
+\newcommand{\tagline}[1]{%
+    \vspace{2pt}{\large\color{midgray} #1}\par
+}
+
+% Job Entry Command: {Company}{Location}{Title}{Date Range}{Bullets}
+\newcommand{\jobentry}[5]{%
+    \vspace{4pt}
+    \noindent
+    \begin{tabularx}{\textwidth}{@{}X r@{}}
+        {\bfseries\color{darkgray} #3} & {\small\color{midgray} #4} \\
+        {\color{accentblue} #1} \textnormal{{\small\color{midgray}$\cdot$ #2}} & \\
+    \end{tabularx}
+    \vspace{2pt}
+    \begin{itemize}[leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=2pt]
+        #5
+    \end{itemize}
+    \vspace{2pt}
+}
+
+% Education Entry: {Degree/Cert}{Institution}{Detail}{Date}
+\newcommand{\eduentry}[4]{%
+    \vspace{4pt}
+    \noindent
+    \begin{tabularx}{\textwidth}{@{}X r@{}}
+        {\bfseries\color{darkgray} #1} & {\small\color{midgray} #4} \\
+        {\color{midgray}\small #2 $\cdot$ #3} & \\
+    \end{tabularx}
+    \vspace{2pt}
+}
+
+% Skill Category
+\newcommand{\skillcat}[2]{%
+    \noindent{\bfseries\color{darkgray} #1:} {\color{midgray} #2}\par\vspace{2pt}
+}
+
+% Project Entry: {Name}{Tech Stack}{Bullets}
+\newcommand{\projectentry}[3]{%
+    \vspace{4pt}
+    \noindent{\bfseries\color{darkgray} #1} \textnormal{{\small\color{accentblue}[#2]}}\\
+    \vspace{1pt}
+    \begin{itemize}[leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=2pt]
+        #3
+    \end{itemize}
+    \vspace{2pt}
+}
+
+%========================================================================================
+\begin{document}
+\pagestyle{empty}
+
+%--- HEADER -----------------------------------------------------------
+\begin{center}
+    \resumename{Himanshu Gohil}
+    \tagline{Senior Engineer}
+    \vspace{6pt}
+    \small
+    \faIcon{map-marker-alt}~Mumbai, India \quad
+    \faIcon{phone}~+91 90822 33297 \quad
+    \faIcon{envelope}~\href{mailto:himanshugohil234@gmail.com}{himanshugohil234@gmail.com} \\[4pt]
+    \faIcon{linkedin}~\href{https://linkedin.com/in/tghimanshu}{linkedin.com/in/tghimanshu} \quad
+    \faIcon{github}~\href{https://github.com/tghimanshu}{github.com/tghimanshu} \quad
+    \faIcon{globe}~\href{https://tghimanshu.github.io}{alexmorgan.dev}
+\end{center}
+
+\vspace{4pt}
+
+%--- PROFESSIONAL SUMMARY ---------------------------------------------
+\section{Professional Summary}
+
+Results-driven \textbf{Senior Engineer} with \textbf{3+ years of experience} designing, deploying, and optimising large-scale AI systems across high-growth tech environments. Proven expertise in GenAI, RAG architectures, multi-agent systems, and MLOps pipelines. Combines strong engineering rigour with a product mindset, having built AI solutions at \textbf{Google} and \textbf{Go Digital}. Passionate about responsible, production-grade AI that delivers measurable business value.
+
+\vspace{2pt}
+
+%--- EXPERIENCE -------------------------------------------------------
+\section{Professional Experience}
+
+\jobentry
+    {Go Digital}
+    {Mumbai, India}
+    {Senior Engineer}
+    {Aug 2025 -- Present}
+    {
+        \item Architect and own the company's core \textbf{GenAI platform}, serving 50k+ daily active users across enterprise clients with a 99.9\% uptime SLA.
+        \item Lead a cross-functional squad of 5 engineers to deliver a \textbf{multi-agent orchestration framework} (LangGraph + GPT-4o), reducing manual case-handling time by 62\%.
+        \item Designed and shipped a \textbf{production RAG pipeline} (Pinecone + LlamaIndex) over proprietary knowledge bases, achieving MRR@10 of 0.87 on internal benchmarks.
+        \item Established \textbf{LLM evaluation frameworks} (RAGAS, custom evals) and CI/CD guardrails for all model releases, cutting hallucination rates by 38\%.
+        \item Collaborate directly with C-suite stakeholders to define the AI roadmap and communicate technical trade-offs to non-technical audiences.
+        \item Mentor two mid-level engineers and run fortnightly knowledge-sharing sessions on emerging GenAI research.
+    }
+
+\jobentry
+    {Google}
+    {Mumbai, India}
+    {PjM Apprentice - GenAI Specialist}
+    {July 2023 -- Jul 2025}
+    {
+        \item Completed a structured \textbf{2-year Google Apprenticeship} embedded within the Google Cloud AI team, rotating across Vertex AI, Generative AI Studio, and Applied ML divisions.
+        \item Contributed to fine-tuning \textbf{PaLM 2 / Gemini Pro} on domain-specific datasets using internal RLHF tooling; improvements shipped across 3 enterprise product lines.
+        \item Built data preprocessing and feature engineering pipelines in \textbf{Apache Beam / Dataflow}, processing 2TB+ of unstructured text daily with fault-tolerant, scalable architecture.
+        \item Implemented \textbf{prompt engineering} best practices (chain-of-thought, few-shot, constitutional AI) and authored internal documentation adopted company-wide.
+        \item Participated in design reviews, A/B experiment analysis, and production on-call rotations under senior engineer mentorship.
+        \item Achieved \textbf{Google Cloud Professional Machine Learning Engineer} certification (Nov 2023).
+    }
+
+\jobentry
+    {Go Digital}
+    {Mumbai, India}
+    {Associate Engineer}
+    {Jun 2022 -- Jul 2023}
+    {
+        \item Developed and maintained \textbf{NLP microservices} (Python, FastAPI) for text classification, named entity recognition, and sentiment analysis integrated into client-facing products.
+        \item Automated model retraining workflows using \textbf{MLflow} and \textbf{GitHub Actions}, reducing deployment cycle time from 2 weeks to 3 days.
+        \item Curated training datasets and conducted EDA for supervised learning pipelines, improving F1 scores by an average of \textbf{14\%} across three production models.
+        \item Integrated AI features into web applications via REST APIs, supporting 10k+ end users.
+    }
+
+%--- EDUCATION --------------------------------------------------------
+\section{Education}
+
+\eduentry
+    {BSc (Information Technology)}
+    {Ghanshyamdas Saraf College, Mumbai}
+    {First Class Honours}
+    {Jun 2019 -- May 2022}
+
+\eduentry
+    {Google Cloud - Professional Cloud Architect}
+    {Google Cloud}
+    {Credential ID: GCPMLE-XXXXXXX}
+    {Nov 2023}
+
+\eduentry
+    {Deep Learning Specialization (5-course)}
+    {Coursera / DeepLearning.AI}
+    {Instructed by Andrew Ng}
+    {Mar 2022}
+
+%--- SKILLS -----------------------------------------------------------
+\section{Technical Skills}
+
+\skillcat{Generative AI \& LLMs}{GPT-4o, Claude 3.5 Sonnet, Gemini Pro, PaLM 2, Llama 3, Mistral; RLHF, DPO, LoRA/QLoRA fine-tuning, Prompt Engineering (CoT, few-shot, ReAct)}
+\skillcat{Frameworks \& Libraries}{LangChain, LangGraph, LlamaIndex, Hugging Face Transformers, PEFT, vLLM, TRL, PyTorch, scikit-learn}
+\skillcat{RAG \& Vector Databases}{Pinecone, Weaviate, FAISS, pgvector, Chroma; hybrid BM25+dense retrieval, re-ranking, contextual compression}
+\skillcat{MLOps \& Cloud}{Vertex AI, AWS SageMaker, MLflow, Weights \& Biases, Docker, Kubernetes, Terraform, GitHub Actions, GCP, Azure}
+\skillcat{Languages \& Data}{Python (advanced), SQL, Bash; PostgreSQL, MongoDB, BigQuery, Redis}
+\skillcat{Evaluation \& Observability}{RAGAS, TruLens, Langfuse, Prometheus/Grafana, custom eval harnesses}
+
+%--- KEY PROJECTS -----------------------------------------------------
+\section{Key Projects}
+
+\projectentry
+    {EnterpriseRAG --- Open-Source Knowledge Assistant}
+    {Python, LangGraph, Pinecone, FastAPI, Docker}
+    {
+        \item Built an end-to-end open-source RAG framework featuring query routing, self-reflection agents, and hybrid retrieval; \textbf{800+ GitHub stars}.
+        \item Implemented adaptive chunking and contextual compression, reducing token usage by 31\% with no degradation in answer quality.
+    }
+
+\projectentry
+    {Automated LLM Evaluation Pipeline (Go Digital)}
+    {Python, RAGAS, Langfuse, GitHub Actions}
+    {
+        \item Designed a CI/CD-integrated eval suite covering faithfulness, answer relevancy, context precision, and toxicity; triggered on every model PR.
+        \item Reduced post-deployment model regression incidents by \textbf{74\%} within the first quarter of adoption.
+    }
+
+%--- AWARDS & RECOGNITION ---------------------------------------------
+\section{Awards \& Recognition}
+
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{Google Apprentice of the Year} --- Google Cloud EMEA, 2024 (selected from 200+ EMEA apprentices)
+    \item \textbf{AI Innovation Award} --- Go Digital Internal Awards, Q1 2025 (multi-agent platform launch)
+    \item \textbf{Speaker} --- \textit{``Production RAG: Lessons from the Trenches''}, AI Engineer Summit London, 2025
+\end{itemize}
+
+%--- FOOTER -----------------------------------------------------------
+\vspace{10pt}
+\begin{center}
+    \small\color{midgray}
+    References available upon request $\cdot$ Portfolio \& writing: \href{https://alexmorgan.dev}{alexmorgan.dev}
+\end{center}
+
+\end{document}
+%========================================================================================
