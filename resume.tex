@@ -1,0 +1,227 @@
+%========================================================================================
+% GenAI Engineer Resume - Himanshu Gohil
+% Clean, ATS-Friendly LaTeX CV
+%========================================================================================
+
+\documentclass[11pt, a4paper]{article}
+
+% --- Packages ---
+\usepackage[margin=0.5in, top=0.4in, bottom=0.4in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{fontawesome5}
+\usepackage{parskip}
+\usepackage{multicol}
+\usepackage{ragged2e}
+
+% --- Color Palette ---
+\definecolor{accentblue}{HTML}{1A73E8}
+\definecolor{darkgray}{HTML}{2D2D2D}
+\definecolor{midgray}{HTML}{555555}
+\definecolor{rulegray}{HTML}{CCCCCC}
+
+% --- Hyperlink Styling ---
+\hypersetup{
+    colorlinks=true,
+    urlcolor=accentblue,
+    linkcolor=accentblue,
+}
+
+% --- Section Title Formatting ---
+\titleformat{\section}{
+    \vspace{-4pt}\color{accentblue}\large\bfseries\uppercase
+}{}{0em}{}[\color{rulegray}\titlerule\vspace{-2pt}]
+
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+% --- Custom Commands ---
+\newcommand{\resumename}[1]{%
+    {\Huge\bfseries\color{darkgray} #1}\par
+}
+
+\newcommand{\tagline}[1]{%
+    \vspace{2pt}{\large\color{midgray} #1}\par
+}
+
+% Job Entry Command: {Company}{Location}{Title}{Date Range}{Bullets}
+\newcommand{\jobentry}[5]{%
+    \vspace{2pt}
+    \noindent
+    \begin{tabularx}{\textwidth}{@{}X r@{}}
+        {\bfseries\color{darkgray} #3} & {\small\color{midgray} #4} \\
+        {\color{accentblue} #1} \textnormal{{\small\color{midgray}$\cdot$ #2}} & \\
+    \end{tabularx}
+    \vspace{-4pt}
+    \begin{itemize}[leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=2pt, nosep, label=\textbullet]
+        #5
+    \end{itemize}
+}
+
+% Education Entry: {Degree/Cert}{Institution}{Detail}{Date}
+\newcommand{\eduentry}[4]{%
+    \vspace{2pt}
+    \noindent
+    \begin{tabularx}{\textwidth}{@{}X r@{}}
+        {\bfseries\color{darkgray} #1} & {\small\color{midgray} #4} \\
+        {\color{midgray}\small #2 $\cdot$ #3} & \\
+    \end{tabularx}
+}
+
+% Skill Category
+\newcommand{\skillcat}[2]{%
+    \noindent{\bfseries\color{darkgray} #1:} {\color{midgray} #2}\par\vspace{1pt}
+}
+
+% Project Entry: {Name}{Tech Stack}{Bullets}
+\newcommand{\projectentry}[3]{%
+    \vspace{2pt}
+    \noindent{\bfseries\color{darkgray} #1} \textnormal{{\small\color{accentblue}[#2]}}\\
+    \vspace{-4pt}
+    \begin{itemize}[leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=2pt, nosep, label=\textbullet]
+        #3
+    \end{itemize}
+}
+
+%========================================================================================
+\begin{document}
+\pagestyle{empty}
+
+%--- HEADER -----------------------------------------------------------
+\begin{center}
+    \resumename{Himanshu Gohil}
+    \tagline{GenAI Specialist | Cloud Architect}
+    \vspace{4pt}
+    \small
+    \faIcon{map-marker-alt}~Mumbai, India \quad
+    \faIcon{phone}~+91 90822 33297 \quad
+    \faIcon{envelope}~\href{mailto:himanshugohil234@gmail.com}{himanshugohil234@gmail.com} \\[2pt]
+    \faIcon{linkedin}~\href{https://linkedin.com/in/tghimanshu}{linkedin.com/in/tghimanshu} \quad
+    \faIcon{github}~\href{https://github.com/tghimanshu}{github.com/tghimanshu} \quad
+    \faIcon{code}~\href{https://leetcode.com/himanshu_gohil_12}{leetcode.com/himanshu\_gohil\_12}
+\end{center}
+
+%--- PROFESSIONAL SUMMARY ---------------------------------------------
+\section{About Me}
+\begin{justify}
+GenAI engineer with \textbf{3.5 years of experience} spanning software development, cloud infrastructure, and applied AI. Spent two years at \textbf{Google} building prototypes and consulting enterprise customers, which gave me a grounded understanding of what real-world AI adoption involves --- including the gaps between what models can do and what businesses actually need. Deeply engaged in the evolving GenAI landscape, with a current focus on solving the practical last-mile challenges of agent workflows and data pipelines for the \textbf{US Energy Sector} at Go Digital.
+\end{justify}
+
+%--- EXPERIENCE -------------------------------------------------------
+\section{Experience}
+
+\jobentry
+    {Go Digital Technology Consulting}
+    {Mumbai, India}
+    {Senior Engineer}
+    {Aug 2025 -- Present}
+    {
+        \item Build GenAI applications and data analytics solutions for the \textbf{US Energy Sector}, focusing on automating data extraction workflows and accelerating internal research cycles.
+        \item Architect data pipelines over company-owned datasets, enabling teams to move from raw data to decision-ready insights without manual intervention.
+        \item Consolidate key business metrics into a central \textbf{visualization platform}, eliminating tool fragmentation and giving stakeholders a single, reliable view of operational data.
+        \item Research autonomous agent frameworks and the integration of Medallion architecture with LLM-based workflows --- translating findings into concrete architectural recommendations for the team.
+        \item Serve as the technical bridge between engineering and stakeholders, ensuring AI roadmap decisions are grounded in actual business needs rather than just what the technology can do.
+    }
+
+\jobentry
+    {Google}
+    {Mumbai, India}
+    {Project Management Apprentice (GenAI Specialist)}
+    {Jul 2023 -- Jul 2025}
+    {
+        \item Built \textbf{28 prototypes} demonstrating Google Cloud and Vertex AI capabilities to enterprise customers across Retail, Automobile, and Media --- mostly in Python and Next.js.
+        \item Worked directly with \textbf{6 customers} on troubleshooting and Cloud consulting, which gave me a good ground-level understanding of real adoption challenges.
+        \item Helped set up dashboards for Revenue Forecasting and Cloud Blockers that gave visibility to \textbf{600+ customers} and touched \textbf{\$200M+} in tracked revenue.
+        \item Contributed as a front-end engineer on an internal social platform using Angular, with a Spring Boot backend.
+        \item Automated repetitive processes across \textbf{11 internal teams}, cutting down manual work by around \textbf{95\%}.
+    }
+
+\jobentry
+    {Go Digital Technology Consulting Pvt. Ltd.}
+    {Mumbai, India}
+    {Associate Software Engineer}
+    {Jun 2022 -- Jul 2023}
+    {
+        \item Migrated several on-premises web applications to the cloud, resulting in roughly \textbf{60\% improvement} in performance post-migration.
+        \item Modernized SharePoint workflows, reducing manual steps by \textbf{80\%} and achieving \textbf{93\%} user satisfaction in internal surveys.
+        \item Built web applications for field teams to log and track on-ground concerns, improving operational efficiency by \textbf{60\%} and concern visibility by \textbf{40\%}.
+        \item Received the \textbf{Client Communications Award} for building strong, trust-based relationships with client teams.
+    }
+
+%--- TECHNICAL SKILLS -----------------------------------------------------------
+\section{Technical Skills}
+
+\skillcat{Core LLMs}{\mbox{Gemini Enterprise}, \mbox{Claude (Anthropic)}, \mbox{GPT-4 via Azure}, \mbox{AWS Bedrock} (Titan, Llama)}
+\skillcat{Agent Frameworks}{\textbf{\mbox{Google ADK}}, LangChain, \mbox{DialogFlow CX}, \mbox{Vertex AI Agents}}
+\skillcat{RAG \& Vector}{\mbox{BigQuery Vector Search}, \mbox{Vertex AI Matching Engine}, \mbox{Embeddings API}, \textbf{\mbox{Medallion Architecture}}}
+\skillcat{Cloud \& DevOps}{GCP (primary), AWS, Firebase, Docker, Terraform, \mbox{GitLab CI}, \mbox{GitHub Actions}}
+\skillcat{Development}{Python (Flask, Streamlit, Dash), TypeScript, JavaScript, Angular, \mbox{React (NextJS)}, \mbox{Apps Script}}
+\skillcat{Databases}{BigQuery, PostgreSQL, MySQL, MongoDB, GoogleSQL}
+\skillcat{Process \& Tools}{Jira, Asana, Notion, Agile/Scrum, \mbox{Vertex AI Studio}, \textbf{\mbox{Model Armor}}}
+
+%--- KEY PROJECTS -----------------------------------------------------
+\section{Projects}
+
+\projectentry
+    {AI Agent Workflows}
+    {Vertex AI, Python, ADK, Gemini API, GCP}
+    {
+        \item Built and tested several AI agents using Google's Agent Development Kit (ADK) with \textbf{function calling} and tool-use --- including API integrations, structured data lookup, and media processing tasks like automated subtitling and call transcript analysis.
+        \item Learned a lot about how multi-step agent reasoning works in practice, especially where it breaks down: tool invocation failures, hallucinated function arguments, and when to add guardrails vs.\ simplify the task definition.
+    }
+
+\projectentry
+    {Internal BI Dashboard}
+    {Python, Streamlit, Plotly Dash, BigQuery, GCP}
+    {
+        \item Designed a multi-source data pipeline that normalized and joined across \textbf{heterogeneous internal datasets} in BigQuery, handling schema inconsistencies and incremental refresh logic to keep dashboards current without full reloads.
+        \item Built the frontend in Streamlit and Plotly Dash with parameterized filters and drill-down views --- keeping the query layer decoupled from the UI so non-technical stakeholders could explore data without writing SQL.
+    }
+
+\projectentry
+    {Model Armor Early Adoption}
+    {GCP, Python, Vertex AI, Model Armor}
+    {
+        \item Picked up Model Armor when it first launched and implemented it for a few compliance-sensitive demos in the HCLS and BFSI space.
+        \item Also worked on \textbf{10+ GenAI demos} across Retail, Media, and Automobile as part of the Google Cloud customer engagement work.
+    }
+
+
+%--- EDUCATION & CERTIFICATIONS --------------------------------------------------------
+\section{Education \& Certifications}
+
+\eduentry
+    {B.Sc. in Information Technology}
+    {Ghanshyamdas Saraf College, Mumbai}
+    {SGPA: 9.32 | Board of Studies (Alumni) | Technical Fest Head}
+    {2019 -- 2022}
+
+\vspace{4pt}
+\noindent{\bfseries\color{darkgray} Professional Certifications} \hfill {\small\color{midgray} 2023 -- 2025}\\[2pt]
+\begin{multicols}{2}
+\begin{itemize}[leftmargin=1.2em, itemsep=1pt, parsep=0pt, topsep=0pt, label={\color{midgray}$\cdot$}]
+    \item {\color{midgray}\small GCP Professional Cloud Architect}
+    \item {\color{midgray}\small GCP Associate Cloud Engineer}
+    \item {\color{midgray}\small GCP Cloud Digital Leader}
+    \item {\color{midgray}\small GCP Generative AI Leader}
+    \item {\color{midgray}\small OCI 2025 Generative AI Professional}
+    \item {\color{midgray}\small Project Management Course --- Google}
+\end{itemize}
+\end{multicols}
+
+%--- AWARDS -----------------------------------------------------------
+\section{Awards \& Extras}
+
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt, parsep=0pt, topsep=2pt]
+    \item \textbf{Client Communications Award} --- Go Digital, 2023, for building strong relationships and clear communication with client teams
+    \item \textbf{Google Project Management Certificate} --- completed during the Google apprenticeship program
+    \item \textbf{Languages} --- English, Hindi, Gujarati, Marathi
+\end{itemize}
+
+\end{document}
